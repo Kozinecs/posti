@@ -7,7 +7,7 @@ import Product from "./product.component";
 const Brand = ({ data: { name, products, id }, categoryId, removeBrand }) => {
   return (
     <div className="tree">
-      <div class="title-with-button">
+      <div className="title-with-button">
         <p>{name}</p>
         <button onClick={() => removeBrand(categoryId, id)}>Delete</button>
       </div>

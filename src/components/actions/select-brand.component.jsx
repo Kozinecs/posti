@@ -3,14 +3,15 @@ import { connect } from "react-redux";
 
 import { selectBrand } from "../../redux/categories/categories.action";
 
-const SelectBrand = ({ categories, selectedCategory, selectBrand }) => {
+const SelectBrand = ({ categories, selectedCategory, selectBrand, selectedBrand }) => {
   useEffect(() => {
-    selectBrand(categories[0].brands[0].id);
-  });
+    selectBrand(categories[0]?.brands[0]?.id);
+  }, [selectBrand, categories]);
 
   return (
     <div>
       <select
+        value={selectedBrand}
         onChange={(event) => {
           selectBrand(parseInt(event.target.value));
         }}
@@ -32,6 +33,7 @@ const SelectBrand = ({ categories, selectedCategory, selectBrand }) => {
 const mapStateToProps = (state) => ({
   categories: state.categories.categoriesList,
   selectedCategory: state.categories.selectedCategory,
+  selectedBrand: state.categories.selectedBrand,
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -7,7 +7,7 @@ import Brand from "./brand.component";
 const Category = ({ data: { name, id, brands }, removeCategory }) => {
   return (
     <div className="tree">
-      <div class="title-with-button">
+      <div className="title-with-button">
         <p>{name}</p> <button onClick={() => removeCategory(id)}>Delete</button>
       </div>
       {brands.map((brand) => (

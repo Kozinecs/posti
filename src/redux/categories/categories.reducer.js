@@ -7,7 +7,7 @@ import {
 const INITIAL_STATE = {
   categoriesList: [],
   selectedCategory: '',
-  selectBrand: '',
+  selectedBrand: '',
   productName: '',
   categoryName: '',
   brandName: '',
@@ -15,7 +15,6 @@ const INITIAL_STATE = {
 }
 
 const categoriesReducer = (state = INITIAL_STATE, action) => {
-  console.log('action', action);
   switch (action.type) {
     case CATEGORIES_LIST:
       return {
@@ -30,7 +29,7 @@ const categoriesReducer = (state = INITIAL_STATE, action) => {
     case SELECT_BRAND:
       return {
         ...state,
-        selectBrand: action.payload
+        selectedBrand: action.payload
       }
     case NEW_PRODUCT_NAME:
       return {

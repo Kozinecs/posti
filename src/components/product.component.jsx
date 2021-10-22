@@ -10,7 +10,7 @@ const Product = ({
 }) => {
   return (
     <div className="tree">
-      <div class="title-with-button">
+      <div className="title-with-button">
         <p>{name}</p>
         <button onClick={() => removeProduct(categoryId, brandId, id)}>
           Delete

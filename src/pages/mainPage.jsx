@@ -20,7 +20,7 @@ const MainPage = ({ getCategoriesList, categories, toggleModal }) => {
 
   return (
     <section>
-      <div class="actions">
+      <div className="actions">
         <p>Actions</p>
         <button onClick={() => handleButtons('category')}>Add Category</button>
         <button onClick={() => handleButtons('brand')}>Add Brand</button>

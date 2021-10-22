@@ -33,7 +33,7 @@ export const addElement = (type) => {
   const id = Math.floor(Math.random() * 99999);
   const categoriesList = cloneDeep(store.getState().categories.categoriesList);
   const selectedCategory = store.getState().categories.selectedCategory;
-  const selectBrand = store.getState().categories.selectBrand;
+  const selectedBrand = store.getState().categories.selectedBrand;
   const productName = store.getState().categories.productName;
   const categoryName = store.getState().categories.categoryName;
   const brandName = store.getState().categories.brandName;
@@ -64,7 +64,7 @@ export const addElement = (type) => {
     categoriesList.forEach(category => {
       if (category.id === selectedCategory) {
         category.brands.forEach(brand => {
-          if (brand.id === selectBrand) {
+          if (brand.id === selectedBrand) {
             brand.products.push({
               id: id,
               name: productName
@@ -148,12 +148,10 @@ export const removeProduct = (categoryId, brandId, productId) => {
 }
 
 
-export const selectCategory = (categoryId) => {
-  return {
-    type: SELECT_CATEGORY,
-    payload: categoryId
-  }
-}
+export const selectCategory = (categoryId) => ({
+  type: SELECT_CATEGORY,
+  payload: categoryId
+})
 
 export const selectBrand = (brandId) => ({
   type: SELECT_BRAND,
@@ -180,8 +178,6 @@ export const toggleModal = (showModal) => ({
   payload: showModal
 })
 
-export const clearFields = () => {
-  return {
-    type: CLEAR_FIELDS
-  }
-}
+export const clearFields = () => ({
+  type: CLEAR_FIELDS
+})

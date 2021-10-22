@@ -3,14 +3,15 @@ import { connect } from "react-redux";
 
 import { selectCategory } from "../../redux/categories/categories.action";
 
-const SelectCategory = ({ categories, selectCategory }) => {
+const SelectCategory = ({ categories, selectCategory, selectedCategory }) => {
   useEffect(() => {
-    selectCategory(categories[0].id);
-  });
+    selectCategory(categories[0]?.id);
+  }, [categories, selectCategory]);
 
   return (
     <div>
       <select
+        value={selectedCategory}
         onChange={(event) => {
           selectCategory(event.target.value);
         }}
@@ -27,6 +28,7 @@ const SelectCategory = ({ categories, selectCategory }) => {
 
 const mapStateToProps = (state) => ({
   categories: state.categories.categoriesList,
+  selectedCategory: state.categories.selectedCategory,
 });
 
 const mapDispatchToProps = (dispatch) => ({
