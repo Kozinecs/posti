@@ -1,0 +1,16 @@
+export const CATEGORIES_LIST = 'CATEGORIES_LIST';
+
+export const NEW_CATEGORY_NAME = 'NEW_CATEGORY_NAME';
+export const SELECT_CATEGORY = 'SELECT_CATEGORY';
+export const REMOVE_CATEGORY = 'REMOVE_CATEGORY';
+
+export const NEW_BRAND_NAME = 'NEW_BRAND_NAME';
+export const SELECT_BRAND = 'SELECT_BRAND';
+export const REMOVE_BRAND = 'REMOVE_BRAND';
+
+export const NEW_PRODUCT_NAME = 'NEW_PRODUCT_NAME';
+export const ADD_PRODUCT = "ADD_PRODUCT";
+export const REMOVE_PRODUCT = 'REMOVE_PRODUCT';
+
+export const SHOW_MODAL = "SHOW_MODAL";
+export const CLEAR_FIELDS = "CLEAR_FIELDS";
